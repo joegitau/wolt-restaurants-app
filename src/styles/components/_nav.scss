@@ -4,4 +4,30 @@
   display: flex;
   margin-bottom: $xl-size;
   padding: $s-size 0;
+  height: 60px;
+
+  .container {
+    max-width: 80%;
+
+    a.brand {
+      text-decoration: none;
+      font-weight: 600;
+      color: $primary-color;
+    }
+
+    nav {
+      float: right;
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        list-style-type: none;
+
+        li {
+          padding: 4px 6px;
+        }
+      }
+    }
+  }
 }

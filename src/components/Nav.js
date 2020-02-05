@@ -4,7 +4,9 @@ const Nav = () => {
   return (
     <div className="header">
       <div className="container">
-        <a href="#0">Wolt restaurant Finder</a>
+        <a href="#0" className="brand">
+          Wolt restaurant Finder
+        </a>
         <nav>
           <ul>
             <li>All Restaurants</li>
