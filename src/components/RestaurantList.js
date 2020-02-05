@@ -2,6 +2,19 @@ import React, { useState, useEffect } from "react";
 import Restaurant from "./Restaurant";
 
 const RestaurantList = () => {
+  const [restaurants, setRestaurants] = useState([]);
+
+  const fetchRestaurants = async () => {
+    const data = await fetch("./_data/restaurants.json");
+    const restaurants = await data.json();
+    console.log(restaurants.restaurants);
+    setRestaurants(restaurants.restaurants);
+  };
+
+  useEffect(() => {
+    fetchRestaurants();
+  }, []);
+
   return (
     <div className="content">
       <div className="row">
@@ -11,7 +24,9 @@ const RestaurantList = () => {
         </div>
         <div className="row">
           <div className="twelve columns">
-            <Restaurant />
+            {restaurants.map(restaurant => (
+              <Restaurant restaurant={restaurant} />
+            ))}
           </div>
         </div>
         <div className="row">

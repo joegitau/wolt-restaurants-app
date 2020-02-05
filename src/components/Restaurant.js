@@ -1,12 +1,12 @@
 import React from "react";
 
-const Restaurant = () => {
+const Restaurant = ({ restaurant }) => {
   return (
     <div className="three columns">
       <div className="item">
         <div className="item-body">
-          <img src="" alt="" />
-          <h1>Restaurant Name</h1>
+          <img src={restaurant.image} alt={restaurant.name} />
+          <h1>{restaurant.name}</h1>
         </div>
       </div>
     </div>
