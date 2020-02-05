@@ -1,19 +1,32 @@
 import React, { useState, useEffect } from "react";
 import Restaurant from "./Restaurant";
+import { randomKey } from "../utils/randomKey";
+import Pagination from "../utils/pagination";
 
 const RestaurantList = () => {
   const [restaurants, setRestaurants] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [restaurantsPerPage] = useState(16);
 
   const fetchRestaurants = async () => {
     const data = await fetch("./_data/restaurants.json");
     const restaurants = await data.json();
-    console.log(restaurants.restaurants);
     setRestaurants(restaurants.restaurants);
   };
 
   useEffect(() => {
     fetchRestaurants();
   }, []);
+
+  // pagination
+  const indexOfLastRestaurant = currentPage * restaurantsPerPage;
+  const indexOfFirstRestaurant = indexOfLastRestaurant - restaurantsPerPage;
+  const currentRestaurants = restaurants.slice(
+    indexOfFirstRestaurant,
+    indexOfLastRestaurant
+  );
+
+  const handlePagination = pageNumber => setCurrentPage(pageNumber);
 
   return (
     <div className="content">
@@ -24,13 +37,19 @@ const RestaurantList = () => {
         </div>
         <div className="row">
           <div className="twelve columns">
-            {restaurants.map(restaurant => (
-              <Restaurant restaurant={restaurant} />
+            {currentRestaurants.map(restaurant => (
+              <Restaurant restaurant={restaurant} key={randomKey(10)} />
             ))}
           </div>
         </div>
         <div className="row">
-          <div className="twelve columns">Pagination</div>
+          <div className="twelve columns">
+            <Pagination
+              restaurantsPerPage={restaurantsPerPage}
+              totalRestaurants={restaurants.length}
+              onPaginate={handlePagination}
+            />
+          </div>
         </div>
       </div>
     </div>
