@@ -1,14 +1,21 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 
+import Nav from "./Nav";
+import Restaurant from "./Restaurant";
+import NotFound from "./NotFound";
+import RestaurantList from "./RestaurantList";
+
 const App = () => {
   return (
-    <React.Fragment>
-      <NavBar />
+    <div className="container">
+      <Nav />
       <Switch>
-        <Route path="/" component={} exact />
+        <Route path="/" component={RestaurantList} exact />
+        <Route path="/restaurant/:id" component={Restaurant} exact />
+        <Router component={NotFound} />
       </Switch>
-    </React.Fragment>
+    </div>
   );
 };
 export default App;
