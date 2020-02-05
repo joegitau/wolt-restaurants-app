@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Restaurant from "./Restaurant";
 
 const RestaurantList = () => {
   return (
@@ -9,7 +10,9 @@ const RestaurantList = () => {
           <button className="btn-main">Sort Desc</button>
         </div>
         <div className="row">
-          <div className="twelve columns">All Restaurants</div>
+          <div className="twelve columns">
+            <Restaurant />
+          </div>
         </div>
         <div className="row">
           <div className="twelve columns">Pagination</div>
