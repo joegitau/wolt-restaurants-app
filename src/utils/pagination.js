@@ -11,7 +11,7 @@ const Pagination = ({ restaurantsPerPage, totalRestaurants, onPaginate }) => {
     <React.Fragment>
       <div className="pagination">
         {pageNumbers.map(pageNumber => (
-          <li key={pageNumber} className="pag-link">
+          <li key={pageNumber} className="pag-item">
             <a
               className="pag-link"
               href="#0"

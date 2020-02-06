@@ -1,0 +1,34 @@
+.pagination {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 0.475rem;
+
+  .pag-item {
+    .pag-link {
+      position: relative;
+      display: block;
+      padding: 1rem 1.4rem;
+      margin-left: -1px;
+      color: $primary-color;
+      background-color: $alt-bg;
+      border: 1px solid #dee2e6;
+      text-decoration: none;
+
+      &:hover {
+        background-color: darken($alt-bg, 25%);
+        color: #fff;
+      }
+    }
+  }
+  .pag-item:first-child .pag-link {
+    margin-left: 0;
+    border-top-left-radius: 0.475rem;
+    border-bottom-left-radius: 0.475rem;
+  }
+
+  .pag-item:last-child .pag-link {
+    border-top-right-radius: 0.475rem;
+    border-bottom-right-radius: 0.475rem;
+  }
+}
