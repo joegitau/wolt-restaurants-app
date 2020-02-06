@@ -31,25 +31,27 @@ const RestaurantList = () => {
   return (
     <div className="content">
       <div className="row">
-        <div className="twelve columns">
+        <div className="twelve-columns">
           <button className="btn-main">Sort Asc</button>
           <button className="btn-main">Sort Desc</button>
         </div>
-        <div className="row">
-          <div className="twelve columns">
+      </div>
+      <div className="row">
+        <div className="twelve-columns">
+          <div className="row">
             {currentRestaurants.map(restaurant => (
-              <Restaurant restaurant={restaurant} key={randomKey(10)} />
+              <Restaurant restaurant={restaurant} key={randomKey(5)} />
             ))}
           </div>
         </div>
-        <div className="row">
-          <div className="twelve columns">
-            <Pagination
-              restaurantsPerPage={restaurantsPerPage}
-              totalRestaurants={restaurants.length}
-              onPaginate={handlePagination}
-            />
-          </div>
+      </div>
+      <div className="row">
+        <div className="twelve-columns">
+          <Pagination
+            restaurantsPerPage={restaurantsPerPage}
+            totalRestaurants={restaurants.length}
+            onPaginate={handlePagination}
+          />
         </div>
       </div>
     </div>

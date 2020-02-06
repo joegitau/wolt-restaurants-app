@@ -1,0 +1,50 @@
+.item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.475rem;
+
+  img {
+    border-top-left-radius: 0.475rem;
+    border-top-right-radius: 0.475rem;
+    width: 100%;
+    height: 200px;
+
+    .img-raised {
+      box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .item-body {
+    flex: 1 1 auto;
+    padding: 1.4rem;
+
+    h5.item-city {
+      font-size: $s-size;
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    h5.item-delivery {
+      font-size: $s-size;
+      font-weight: 500;
+      font-style: italic;
+      float: right;
+    }
+
+    h3.item-title {
+      color: #232323;
+      font-size: $m-size;
+      margin-bottom: 3px;
+      text-align: center;
+    }
+
+    p {
+      color: $primary-color;
+      line-height: 1.4;
+      text-align: center;
+    }
+  }
+}
