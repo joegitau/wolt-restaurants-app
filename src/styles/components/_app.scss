@@ -1,5 +1,4 @@
 .container {
-  max-width: 1140px;
   width: 100%;
   padding: 0 20px;
   margin: 0 auto;
@@ -34,20 +33,20 @@
   }
 }
 
-// @media (min-width: 1200px) {
-//   .container {
-//     max-width: 1140px;
-//   }
-// }
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
 
-// @media (min-width: 768px) {
-//   .container {
-//     max-width: 720px;
-//   }
-// }
+@media (max-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
 
-// @media (min-width: 576px) {
-//   .container {
-//     max-width: 540px;
-//   }
-// }
+@media (max-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}

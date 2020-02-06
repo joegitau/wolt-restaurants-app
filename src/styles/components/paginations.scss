@@ -14,6 +14,7 @@
       background-color: $alt-bg;
       border: 1px solid #dee2e6;
       text-decoration: none;
+      outline: 0;
 
       &:hover {
         background-color: darken($alt-bg, 25%);
@@ -21,6 +22,7 @@
       }
     }
   }
+
   .pag-item:first-child .pag-link {
     margin-left: 0;
     border-top-left-radius: 0.475rem;
