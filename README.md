@@ -5,7 +5,7 @@ It fetches from a locally saved json file of some of Wolt's registered restauran
 
 ## functional Logic
 
-### some of the custom logic developed include:
+some of the custom logic developed include:
 
 ### customized key generator
 
@@ -23,7 +23,7 @@ results into ascending and descending order
 
 ## _overall design_
 
-for styling purposes, the application uses Block Element Modifier methodology, that is, SASS.
+for styling purposes, the application uses **Block Element Modifier** methodology, that is, **SASS**.
 
 ## Installation
 
