@@ -1,4 +1,5 @@
 import React from "react";
+import { convertToDecimal } from "../utils/convertToDecimal";
 
 const Restaurant = ({ restaurant }) => {
   return (
@@ -16,7 +17,8 @@ const Restaurant = ({ restaurant }) => {
             </div>
             <div className="six-columns">
               <h5 className="item-delivery">
-                {restaurant.delivery_price}
+                <strong>Delivery Price: </strong>
+                {convertToDecimal(restaurant.delivery_price)}
                 {restaurant.currency}
               </h5>
             </div>
