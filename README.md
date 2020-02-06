@@ -1,13 +1,13 @@
 # Wolt restaurant-finder App
 
 A Single Page Application developed using React. The application is packed, configured and bundled using babel and webpack.
-It fetches from a locally saved json file of some of Wolt's registered restaurants within Helsinki region - _using fetch API_
+It fetches from a locally saved json file of some of Wolt's registered restaurants within Helsinki region - **using fetch API**
 
 ## functional Logic
 
 ### some of the custom logic developed include:
 
-## _customized key generator_
+### customized key generator
 
 the json object returned does not contain unique IDs which is required in react. Special logic that
 returns random keys for each object is therefore developed.
@@ -18,7 +18,7 @@ for pagination of the returned json objects, pagination logic is construed
 
 ## _sorting_
 
-for sorting purposes, the logic employs both _Array.sort()_ and _String.prototype.localeCompare()_ to sort the returned
+for sorting purposes, the logic employs both **Array.sort()** and **String.prototype.localeCompare()** to sort the returned
 results into ascending and descending order
 
 ## _overall design_
