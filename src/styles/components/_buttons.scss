@@ -1,0 +1,22 @@
+.btn-main {
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  color: $primary-color;
+  text-align: center;
+  font-weight: 600;
+  line-height: 38px;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: $alt-bg;
+  border-radius: 0.475rem;
+  border: 1px solid $alt-bg;
+  cursor: pointer;
+  margin: 0 1rem 1rem 0;
+
+  &:hover {
+    outline: 0;
+    color: #fff;
+    background-color: darken($alt-bg, 15%);
+  }
+}
