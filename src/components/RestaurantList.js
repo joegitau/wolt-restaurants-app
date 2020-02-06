@@ -7,6 +7,7 @@ const RestaurantList = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [restaurantsPerPage] = useState(16);
+  const [sortType, setSortType] = useState("asc");
 
   const fetchRestaurants = async () => {
     const data = await fetch("./_data/restaurants.json");
@@ -28,18 +29,30 @@ const RestaurantList = () => {
 
   const handlePagination = pageNumber => setCurrentPage(pageNumber);
 
+  // sorting - asc / desc
+  const sortedRestaurants = currentRestaurants.sort((a, b) => {
+    const sortValue = sortType === "asc" ? 1 : -1;
+    return sortValue * a.name.localeCompare(b.name);
+  });
+
+  const handleSorting = sortType => setSortType(sortType);
+
   return (
     <div className="content">
       <div className="row">
         <div className="twelve-columns">
-          <button className="btn-main">Sort Asc</button>
-          <button className="btn-main">Sort Desc</button>
+          <button className="btn-main" onClick={() => handleSorting("asc")}>
+            Sort Asc
+          </button>
+          <button className="btn-main" onClick={() => handleSorting("desc")}>
+            Sort Desc
+          </button>
         </div>
       </div>
       <div className="row">
         <div className="twelve-columns">
           <div className="row">
-            {currentRestaurants.map(restaurant => (
+            {sortedRestaurants.map(restaurant => (
               <Restaurant restaurant={restaurant} key={randomKey(5)} />
             ))}
           </div>
